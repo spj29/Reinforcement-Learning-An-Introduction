@@ -183,7 +183,7 @@ def trueValueDP():
 
 def Main():
 	
-	n=9
+	n=5
 	alpha=0.1
 	episodes=100
 	runs=100
@@ -191,7 +191,7 @@ def Main():
 	trueValues=trueValueDP()
 
 	print(trueValues)
-
+	
 	errors=np.zeros(episodes)
 	errors_cv=np.zeros(episodes)
 
@@ -204,6 +204,8 @@ def Main():
 	errors_cv/=runs
 	plt.plot(errors, label='Off Policy without Control Variate')
 	plt.plot(errors_cv, label='Off Policy with Control Variate')
+	plt.xlabel('Episodes')
+	plt.ylabel('RMS Error averaged over 100 runs')
 	plt.legend()
 	plt.savefig('exercise_7_10_{}_{}.png'.format(alpha, n))
 	plt.close()
