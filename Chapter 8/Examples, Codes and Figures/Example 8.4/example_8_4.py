@@ -401,7 +401,7 @@ def Main():
 	stepsPriority/=runs
 	stepsDyna/=runs
 
-	X=[47*i for i in range(1,6)]
+	X=[47*i*i for i in range(1,6)]
 
 	plt.plot(X, stepsDyna, label='Dyna-Q')
 	plt.plot(X, stepsPriority, label='Prioritized Sweeping')
@@ -413,7 +413,7 @@ def Main():
 
 	plt.legend()
 
-	plt.savefig('example_8_4.png')
+	plt.savefig('{}_runs.png'.format(runs))
 	plt.close()
 
 Main()
